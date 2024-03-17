@@ -64,10 +64,4 @@ The page will reload if you make edits. You will also see any lint errors in the
 2. Extend the app's functionality to accept `.txt`,`.docx` & `.pdf` files in addition to `.csv` files.
 3. Add some styling to the bare bones app structure. You are free to use any popular CSS frameworks like Tailwind or UI libraries like Material or Chakra UI. Bonus points for creative and innovative designs.
 
-## Note
 
-1. We expect that the app behaves similar to real world applications we interact with everyday. So think from the point of view of a user and handle all the possible edge cases which may occur while running the app. For instance, you can think of cases when the user has uploaded a very large file (>100mb) or a unsupported file type like video/mp3.
-2. **Important** We want you to uphold your best programming practices (SOLID, OOPs, type hints) for the completion of this assignment, as if your code would end up in production and interact with other software components. A robust solution which covers fewer points will be judged more favourably than a complete solution that cuts corners.
-3. We will check your assignment by doing a full run of your app with all possible edge cases and see how the results look. Please ensure the program is in a finished state so that we can execute even though you might not have
-   completed it in full.
-4. Finally, be sure to provide a `README` document detailing your approach to completing the assignment, including the decisions you took and the reasons behind them.

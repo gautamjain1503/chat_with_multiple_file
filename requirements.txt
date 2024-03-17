@@ -26,3 +26,4 @@ unstructured[csv]
 unstructured[pdf]
 unstructured[docx]
 unstructured[txt]
+gunicorn
