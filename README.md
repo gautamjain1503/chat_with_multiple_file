@@ -1,18 +1,11 @@
 # ProtonDatalabs AI developer Assignment - Chatbot application
 
-## Preface
-
-At ProtonDatalabs, we leverage cutting-age gen-AI solutions to deliver buisness value to our clients. We are able to do this by combining aspects from AI modelling to full-stack developement.
-
-In this assignment, your task is to build a chatbot application which takes a file as an input and answers user's query. The goal of this application is to accurately provide answers based on the uploaded file. This application could be used as an assistant to quickly answer questions or summarize facts from files containing large amounts of text data, making our lives easier.
-
 ## Project structure
 
 In this project you find 2 directories
 
 1. `backend` containing the server side **python** code
-2. `frontend` containing the client side **typescript** code.\
-   In both these directories, it is your job to complete the missing modules and add necessary functionalities to make the app fully functional.
+2. `frontend` containing the client side **typescript** code.
 
 ### Backend
 
@@ -22,6 +15,15 @@ In this project you find 2 directories
 2. This project has a few Python packages as dependencies, you can install them in your virtual environment using `requirements.txt`. If you were to use other dependencies, then please add them to `requirements.txt`.
 3. We will be using [`conda`](https://docs.conda.io/projects/conda/en/stable/) package manager to create a virtual environment `chatbot` using `conda create -n chatbot python=3.10` and then `conda activate chatbot` to activate the environment.
 4. Then install the python packages using `pip install -r requirements.txt`
+
+This backend uses the approach
+
+1. **Data Ingestion**: Files containing unstructured text data are ingested using the `data_ingestion()` function. The UnstructuredFileLoader class loads documents from files. The RecursiveCharacterTextSplitter class splits documents into smaller text chunks to handle large documents effectively.
+2. **Embedding and Indexing**: Text chunks are embedded using OpenAI's language model via the OpenAIEmbeddings class. Pinecone, a vector similarity search service, is utilized to build an index for efficient retrieval. The Pinecone class is used to create a Pinecone index from the embedded text chunks.
+3. **Retrieval and Question Answering**: Queries are processed through the chatbot using the `chatbot()` function. The `retrieval_answer()` function retrieves answers to queries by leveraging the embedded text chunks indexed in Pinecone. Language Model:
+* Utilizes OpenAI's language model for understanding queries (via the ChatOpenAI class).
+* Retrieval QA System: Combines the language model and the Pinecone index to retrieve relevant answers to queries (via the RetrievalQA class).
+
 
 #### Running the backend server
 
