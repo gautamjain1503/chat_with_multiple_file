@@ -25,7 +25,7 @@ export default function App() {
       formData.append("question", question);
     }
 
-    fetch("http://18.206.174.134/predict", {
+    fetch("https://18.206.174.134/predict", {
       method: "POST",
       body: formData,
     })
