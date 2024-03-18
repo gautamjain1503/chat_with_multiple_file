@@ -36,19 +36,19 @@ async def predict(question: Annotated[str, Form()], files: list[UploadFile]) -> 
     # Convert question to string
     question=str(question)
 
-    # # List to store file paths
-    # paths=[]
-    # for f in files:
-    #     file_path = os.path.join(UPLOAD_DIRECTORY, f.filename)
+    # List to store file paths
+    paths=[]
+    for f in files:
+        file_path = os.path.join(UPLOAD_DIRECTORY, f.filename)
 
-    #     # Write the file content to disk
-    #     with open(file_path, "wb") as buffer:
-    #         buffer.write(await f.read())
-    #         paths.append(file_path)
+        # Write the file content to disk
+        with open(file_path, "wb") as buffer:
+            buffer.write(await f.read())
+            paths.append(file_path)
 
-    # # Call chatbot function with uploaded file paths and question
-    # result=chatbot(paths, question)
-    return {"result": "ans"}
+    # Call chatbot function with uploaded file paths and question
+    result=chatbot(paths, question)
+    return {"result": result}
 
 
 # Run the FastAPI app using uvicorn server
