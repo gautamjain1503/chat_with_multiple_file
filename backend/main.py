@@ -30,6 +30,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def read_root():
+    return {"message": "Hello, FastAPI!"}
+
 # Define endpoint for prediction
 @app.post("/predict")
 async def predict(question: Annotated[str, Form()], files: list[UploadFile]) -> Any:
