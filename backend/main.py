@@ -13,6 +13,7 @@ os.makedirs(UPLOAD_DIRECTORY, exist_ok=True)
 
 # Define allowed origins for CORS
 origins = [
+    "*",
     "http://localhost",
     "http://localhost:8080",
     "http://localhost:3000"
